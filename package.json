@@ -1,0 +1,28 @@
+{
+  "name": "moon-noeudpap",
+  "version": "1.0.0",
+  "description": "Moon bowtie and cloth Ecommerce",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arnachap/moon-noeudpap.git"
+  },
+  "keywords": [
+    "Moon",
+    "noeud",
+    "pap",
+    "nancy"
+  ],
+  "author": "Arnaud Chapeleur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arnachap/moon-noeudpap/issues"
+  },
+  "homepage": "https://github.com/Arnachap/moon-noeudpap#readme",
+  "dependencies": {
+    "node-sass": "^4.9.3"
+  }
+}
