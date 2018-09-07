@@ -1,3 +1,63 @@
-h1 {
-  color: blue;
+@import "config";
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background-color: $black;
+}
+
+body {
+  background: #fff;
+  color: #333333;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  .navbar {
+    @include easeOut;
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .nav-item a {
+      @include easeOut;
+      padding: 8px 24px !important;
+      font-size: 1em;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+
+      i {
+        font-size: 24px;
+      }
+
+      &:hover {
+        color: #C4A37A !important;
+      }
+    }
+
+    &:hover,
+    &.scrolled {
+      background-color: #fff;
+
+      .nav-item a {
+        color: #333333;
+      }
+    }
+  }
+}
+
+#intro {
+  height: 100vh;
+  background-image: url('../img/slide-1.jpg');
+  background-size: cover;
 }

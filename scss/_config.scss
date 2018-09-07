@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+$black: #333333;
+
+@mixin easeOut {
+  transition: all .2s ease-out;
+}
