@@ -11,12 +11,16 @@
 
 body {
   background: #fff;
-  color: #333333;
+  color: $black;
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Lato", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
+}
+
+h2 {
+  font-size: 42px;
 }
 
 header {
@@ -27,21 +31,64 @@ header {
       height: 50px;
     }
 
-    .nav-item a {
-      @include easeOut;
-      padding: 8px 24px !important;
-      font-size: 1em;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #fff;
-      text-transform: uppercase;
+    .nav-item {
+      padding: 0 24px;
 
-      i {
-        font-size: 24px;
-      }
+      a {
+        @include easeOut;
+        position: relative;
+        padding: 8px 0 !important;
+        font-size: 1em;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #fff;
+        text-transform: uppercase;
 
-      &:hover {
-        color: #C4A37A !important;
+        i {
+          font-size: 24px;
+        }
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 2px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color: $brown;
+        }
+
+        &:before {
+          opacity: 0;
+          transform: translateY(-8px);
+          transition: transform 0s $easeOutBack, opacity 0s;
+        }
+
+        &:after {
+          opacity: 0;
+          transform: translateY(4px);
+          transition: transform .2s $easeOutBack, opacity .2s;
+        }
+
+        &:hover,
+        &:focus {
+          color: $brown !important;
+
+          &:before,
+          &:after {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          &:before {
+            transition: transform .2s $easeOutBack, opacity .2s;
+          }
+
+          &:before {
+            transition: transform 0s .2s $easeOutBack, opacity 0s .2s;
+          }
+        }
       }
     }
 
@@ -50,14 +97,145 @@ header {
       background-color: #fff;
 
       .nav-item a {
-        color: #333333;
+        color: $black;
       }
     }
   }
 }
 
+#slider {
+  .carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+
 #intro {
-  height: 100vh;
-  background-image: url('../img/slide-1.jpg');
+  background-color: $lightGrey;
+  padding: 100px 0;
+
+  .overlay-container {
+
+    .overlay {
+      position: relative;
+
+      &:after {
+        @include easeOut;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: $black;
+        opacity: .3;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 0.7;
+        }
+      }
+
+      .tile-link {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 30;
+      }
+
+      .overlay-content {
+        position: relative;
+        z-index: 20;
+
+        h2 {
+          font-size: 72px;
+        }
+      }
+    }
+  }
+}
+
+#banner {
+  width: 100%;
+  min-height: 600px;
+  background: url('../img/banner.jpg');
   background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(#000, 0.3);
+  }
+
+  .inner {
+    position: absolute;
+    top: 50%;
+    height: 10em;
+    margin-top: -5em;
+    width: 100%;
+
+    h2 {
+      color: #fff;
+      padding: 40px 0;
+    }
+  }
+}
+
+#create {
+  background-image: url('../img/create-index.jpg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: $lightGrey;
+  height: 100vh;
+}
+
+footer {
+  padding: 80px 0;
+  background-color: $black;
+
+  img {
+    height: 40px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 0;
+    list-style-type: none;
+
+    li {
+      margin-right: 24px;
+
+      a {
+        @include easeOut;
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+
+        &:hover {
+          text-decoration: none;
+          color: $brown;
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }

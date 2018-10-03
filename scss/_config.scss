@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 $black: #333333;
+$brown: #c4a37a;
+$lightGrey: #f8f9fa;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 
 @mixin easeOut {
   transition: all .2s ease-out;
